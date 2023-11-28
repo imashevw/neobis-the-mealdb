@@ -12,7 +12,7 @@ function Ingredient() {
     axios.get(apiUrl1).then((response) => {
       setIngredient(response.data.meals[0]);
     });
-  }, []);
+  }, [id]);
   console.log(ingredient);
 
   return (
@@ -20,13 +20,13 @@ function Ingredient() {
       <Header />
       <div className="container">
         <div className="ingredient">
-          <h2 className="promo__title" id={ingredient.idMeal}>
+          <h2 className="main__title" id={ingredient.idMeal}>
             {ingredient.strMeal}
           </h2>
-          <p className="promo__descr">
+          <p className="main__description">
             {ingredient.strCategory} | {ingredient.strArea}
           </p>
-          <div className="fl">
+          <div className="sv-re">
             <div className="ingredients">
               {Object.keys(ingredient)
                 .filter(
@@ -39,7 +39,7 @@ function Ingredient() {
                   </p>
                 ))}
             </div>
-            <div className="recipe__img">
+            <div className="ingredient__img">
               <img src={ingredient.strMealThumb} alt={ingredient.strMeal} />
             </div>
           </div>
@@ -47,9 +47,6 @@ function Ingredient() {
         <div>
           <h2>Instruction</h2>
           <p>{ingredient.strInstructions}</p>
-          <button className="btnYoutube">
-            <a href={ingredient.strYoutube}>Watch on Youtube</a>
-          </button>
         </div>
       </div>
     </div>
