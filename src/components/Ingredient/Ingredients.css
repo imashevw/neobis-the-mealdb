@@ -1,14 +1,5 @@
-.ingredient__img img{
-    width: 70%;
-    display: block;
-    margin: 0 auto;
-}
-.ingredient__block{
-    justify-content: space-between;
-}
-.instruction{
-    margin-top: 30px;
-}
-.ingredient{
-    height: 100vh;
+.ingredient {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
